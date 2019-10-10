@@ -19,7 +19,11 @@ namespace Editor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = openFileDialog1.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                richTextBox1.Text = System.IO.File.ReadAllText(openFileDialog1.FileName);
+            }
         }
     }
 }
